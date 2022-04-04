@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,CAAC,AAAC,CACE,WAAW,CAAE,wBAAwB,CAAG,AAE5C,AAAA,UAAU,AAAC,CACP,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,MAAM,CAAG",
+    "sources": [
+        "../sass/style.sass",
+        "../sass/base/_variables.scss",
+        "../sass/base/_mixins.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}
