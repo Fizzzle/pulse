@@ -39,16 +39,16 @@ function browsersync() {
 	})
 }
  
-// function scripts() {
-// 	return src([ // Берем файлы из источников
-// 		'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
-// 		'src/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-// 		])
-// 	.pipe(concat('main.min.js')) // Конкатенируем в один файл
-// 	.pipe(uglify()) // Сжимаем JavaScript
-// 	.pipe(dest('src/js/')) // Выгружаем готовый файл в папку назначения
-// 	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
-// }
+function scripts() {
+	return src([ // Берем файлы из источников
+		// 'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+		'src/js/script.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+		])
+	.pipe(concat('script.min.js')) // Конкатенируем в один файл
+	.pipe(uglify()) // Сжимаем JavaScript
+	.pipe(dest('src/js/')) // Выгружаем готовый файл в папку назначения
+	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
  
 function styles() {
 	return src('src/' + preprocessor + '/style.' + preprocessor + '') // Выбираем источник: "src/sass/main.sass" или "src/less/main.less"
@@ -98,7 +98,7 @@ function cleandist() {
 function startwatch() {
  
 	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
-	// watch(['src/**/*.js', '!src/**/*.min.js'], scripts);
+	watch(['src/js/*.js', '!src/**/*.min.js'], scripts);
 	
 	// Мониторим файлы препроцессора на изменения
 	watch('src/**/' + preprocessor + '/**/*', styles);
@@ -115,7 +115,7 @@ function startwatch() {
 exports.browsersync = browsersync;
  
 // Экспортируем функцию scripts() в таск scripts
-// exports.scripts = scripts;
+exports.scripts = scripts;
  
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
