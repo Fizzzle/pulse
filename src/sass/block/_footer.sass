@@ -36,8 +36,19 @@
         border: 2px solid #fff
         border-radius: 100%
         margin: 15px
+        transition: .5s all
         img
             height: 27px
+        &:nth-child(1):hover
+            background-color: #3b5998
+            transform: scale(1.1)
+        &:nth-child(2):hover
+            background: linear-gradient(#5851DB, #833AB4, #C13584, #E1306C, #F56040)
+            transform: scale(1.1)
+        &:nth-child(3):hover
+            background-color: #E60023
+            transform: scale(1.1)
+
     &__social
         display: flex
         justify-content: center

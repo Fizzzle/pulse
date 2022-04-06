@@ -24,6 +24,8 @@
             width: 100%
             height: 20vh
             font-size: 14px
+        &_mini
+            height: 32px
 
     .promo
         min-height: 550px
@@ -68,7 +70,54 @@
     .feed-form
         margin-top: 30px
         width: 280px
+    .carousel
+        padding: 60px 0
+        &__inner
+            width: 600px
+            img
+                width: 100%
+        .slick-prev, .slick-next
+            img
+                width: 25px
+                height: 40px
     .catalog
+        padding-bottom: 75px
+        &__tabs
+            margin-top: 55px
+        &__tab
+            width: 200px
+        &__content
+            margin-top: 45px
+            justify-content: space-evenly
+            margin: 30px
+
+    .clients
+        margin-bottom: 50px
+        &-block
+            margin-top: 60px
+            &:nth-child(2)
+                margin-top: 60px
+            &__item
+                margin-left: 50px
+            &__name
+                font-size: 16px
+            &__subname
+                margin-top: 8px
+                font-size: 12px
+            &__descr
+                margin-top: 15px
+                width: 90%
+                font-size: 14px
+    .footer
+        &__info
+            width: 400px
+            height: 250px
+        &__addr
+            margin-bottom: 30px
+            font-size: 17px
+        &__phone
+            font-size: 18px
+            margin-bottom: 22px
 
 @media (max-width: 768px)
     .header
@@ -98,6 +147,9 @@
             width: 100%
             height: 18vh
             font-size: 13px
+        &_mini
+            height: 30px
+            font-size: 11px
 
     .promo
         min-height: 500px
@@ -147,3 +199,65 @@
     .feed-form
         margin-top: 20px
         width: 240px
+    .carousel
+        padding: 30px 0
+        &__inner
+            width: 450px
+        img
+            width: 100%
+        .slick-prev, .slick-next
+            img
+                width: 0px
+    .catalog
+        padding-bottom: 45px
+        &__tabs
+            margin-top: 35px
+        &__tab
+            width: 140px
+            font-size: 14px
+        &__content
+            margin-top: 45px
+            justify-content: space-evenly
+            margin: 30px
+
+    .clients
+        margin-bottom: 50px
+        &-block
+            margin-top: 60px
+            display: flex
+            flex-direction: column
+            margin: 0 auto
+            margin-bottom: 25px
+            img
+                margin-bottom: 20px
+            &:nth-child(2)
+                margin-top: 40px
+            &__item
+                margin-left: 0
+                text-align: center
+            &__name
+                text-align: center
+                font-size: 16px
+            &__subname
+                text-align: center
+                margin-top: 8px
+                font-size: 12px
+            &__descr
+                text-align: center
+                // margin-top: 15px
+                width: 450px
+                font-size: 14px
+
+    .footer
+        &__info
+            padding: 15px 20px
+            width: 350px
+            height: 200px
+        &__addr
+            margin-bottom: 20px
+            font-size: 15px
+        &__phone
+            font-size: 16px
+            margin-bottom: 25px
+        &__social-item
+            margin: 10px
