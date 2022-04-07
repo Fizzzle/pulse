@@ -1,4 +1,6 @@
 @media (max-width: 991px)
+    .container
+        max-width: 900px
     .header
         &__logo
             width: 220px
@@ -119,7 +121,23 @@
             font-size: 18px
             margin-bottom: 22px
 
+    .modal
+        width: 320px
+        padding: 18px 20px 30px 20px
+        &__close
+            top: 35px
+            font-size: 35px
+            right: -35px
+        &__subtitle
+            font-size: 15px
+        &__descr
+            font-size: 12px
+        .button
+            height: 15vh
+
 @media (max-width: 768px)
+    .container
+        max-width: 720px
     .header
         &__logo
             width: 200px
@@ -145,7 +163,7 @@
             color: #fff
         &_submit
             width: 100%
-            height: 18vh
+            height: 10vh
             font-size: 13px
         &_mini
             height: 30px
@@ -196,13 +214,15 @@
         padding: 50px 10px
         &__descr
             font-size: 15px
+        .button
+            height: 10vh
     .feed-form
         margin-top: 20px
         width: 240px
     .carousel
         padding: 30px 0
         &__inner
-            width: 450px
+            width: 300px
         img
             width: 100%
         .slick-prev, .slick-next
@@ -245,7 +265,7 @@
             &__descr
                 text-align: center
                 // margin-top: 15px
-                width: 450px
+                width: 320px
                 font-size: 14px
 
     .footer
@@ -261,3 +281,180 @@
             margin-bottom: 25px
         &__social-item
             margin: 10px
+    .modal
+        width: 280px
+        padding: 18px 20px 30px 20px
+        &__close
+            top: 5px
+            font-size: 45px
+            right: -35px
+        &__subtitle
+            font-size: 15px
+        &__descr
+            font-size: 12px
+        .button
+            height: 10vh
+
+@media (max-width: 576px)
+    .container
+        width: 100%
+        padding: 0 10px
+    .header
+        &__logo
+            width: 200px
+        &__official
+            font-size: 8px
+            span
+                font-size: 12px
+        &__phone
+            font-size: 10px
+
+    .button
+        margin-top: 5px
+        width: 110px
+        height: 20px
+        font-size: 10px
+        &_main
+            margin-top: 30px
+            width: 215px
+            height: 30px
+            border-radius: 5px
+            font-size: 12px
+            color: #fff
+        &_submit
+            width: 100%
+            height: 10vh
+            font-size: 13px
+        &_mini
+            height: 30px
+            font-size: 11px
+
+    .promo
+        min-height: 500px
+        padding: 15px 10px 45px
+        &__wrapper
+            margin-top: 60px
+        &__header
+            font-size: 32px
+        &__subheader
+            font-size: 16px
+        &__icons
+            margin-top: 50px
+            width: 300px
+        &__icon
+            font-size: 10px
+            img
+                margin-bottom: 10px
+        &__link
+            font-size: 12px
+            margin-top: 12px
+            margin-right: 10px
+    .title
+        font-size: 23px
+
+    .advantage
+        min-height: 380px
+        padding: 40px 0px
+        &__wrapper
+            margin-top: 20px
+            flex-direction: column
+            align-items: center
+            br
+                display: none
+        &__block
+            margin-top: 20px
+        &__title
+            margin-top: 14px
+            font-size: 12px
+        &__descr
+            margin-top: 10px
+            font-size: 10px
+    .consultation
+        min-height: 540px
+        padding: 50px 10px
+        &__descr
+            font-size: 15px
+        .button
+            height: 10vh
+    .feed-form
+        margin-top: 20px
+        width: 240px
+    .carousel
+        padding: 20px 0
+        margin: 0 auto
+        &__inner
+            width: 220px
+        img
+            width: 100%
+        .slick-prev, .slick-next
+            img
+                width: 0px
+    .catalog
+        padding-bottom: 45px
+        // width: 350px
+        &__tabs
+            margin-top: 35px
+        &__tab
+            width: 100px
+            font-size: 10px
+            border: 1px solid #d0d0d0
+            margin: 0 2px
+        &__content
+            margin-top: 45px
+            justify-content: space-evenly
+            margin: 30px
+
+    .clients
+        margin-bottom: 50px
+        &-block
+            margin-top: 60px
+            display: flex
+            flex-direction: column
+            margin: 0 auto
+            margin-bottom: 25px
+            img
+                margin-bottom: 20px
+            &:nth-child(2)
+                margin-top: 40px
+            &__item
+                margin-left: 0
+                text-align: center
+            &__name
+                text-align: center
+                font-size: 16px
+            &__subname
+                text-align: center
+                margin-top: 8px
+                font-size: 12px
+            &__descr
+                text-align: center
+                // margin-top: 15px
+                width: 320px
+                font-size: 14px
+
+    .footer
+        &__info
+            padding: 15px 20px
+            width: 350px
+            height: 200px
+        &__addr
+            margin-bottom: 20px
+            font-size: 15px
+        &__phone
+            font-size: 16px
+            margin-bottom: 25px
+        &__social-item
+            margin: 10px
+    .modal
+        width: 280px
+        padding: 18px 20px 30px 20px
+        &__close
+            top: 5px
+            font-size: 45px
+            right: -35px
+        &__subtitle
+            font-size: 15px
+        &__descr
+            font-size: 12px
+        .button
+            height: 10vh

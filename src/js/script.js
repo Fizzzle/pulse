@@ -72,6 +72,8 @@ $(document).ready(function(){
     valideForm('#consultation-form form')
     valideForm('#consultation form')
 
+    $('input[name=phone]').mask('+380 (99) 99-99-99');
+
 });
 
 
