@@ -74,6 +74,21 @@ $(document).ready(function(){
 
     $('input[name=phone]').mask('+380 (99) 99-99-99');
 
+    // smooth scroll and pageUp
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $('.pageUp').fadeIn();
+        } else {
+            $('.pageUp').fadeOut();
+        }
+    })
+
+    $("a[href^='#']").click(function () {
+        const _href = $(this).attr("href");
+        $("html,body").animate({ scrollTop: $(_href).offset().top + "px" });
+        return false;
+    })
 });
 
 
