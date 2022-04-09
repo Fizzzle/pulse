@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/slick.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
@@ -63,14 +64,14 @@
             <h1 class="title advantage__header">НАШИ ПРЕИМУЩЕСТВА</h1>
             <div class="advantage__wrapper">
                 <div class="advantage__block">
-                    <img src="./icons/second/cup.png" alt="">
+                    <img src="./icons/second/cup.png" alt="" class="advantage__item">
                     <div class="advantage__title">Делимся опытом</div>
                     <div class="advantage__descr">Наши сотрудники всегда готовы поделиться своим опытом,
                         так как сами бегают полумарафоны, переплыли Босфор, готовятся к соревнованиям по триатлону!
                     </div>
                 </div>
                 <div class="advantage__block">
-                    <img src="./icons/second/heart.png" alt="">
+                    <img src="./icons/second/heart.png" alt="" class="advantage__icon_animated">
                     <div class="advantage__title">Заботимся о здоровье</div>
                     <div class="advantage__descr">Мы работаем для того,
                         чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость Вам и Вашим
@@ -78,7 +79,7 @@
                     </div>
                 </div>
                 <div class="advantage__block">
-                    <img src="./icons/second/shoe.png" alt="">
+                    <img src="./icons/second/shoe.png" alt="" class="advantage__item">
                     <div class="advantage__title">Учим бегать</div>
                     <div class="advantage__descr">Помогаем с обучением
                         <br> правильной технике бега! <br>
@@ -487,7 +488,7 @@
             <h2 class="title">
                 Отзывы клиентов
             </h2>
-            <div class="clients-block">
+            <div data-aos="fade-up" data-aos-duration="3000" class="clients-block">
                 <img src="./img/client/1.png" alt="" class="clients-block__img">
                 <div class="clients-block__item">
                     <div class="clients-block__name">
@@ -508,7 +509,7 @@
                     </div>
                 </div>
             </div>
-            <div class="clients-block">
+            <div data-aos="fade-up" data-aos-duration="3000" class="clients-block">
                 <img src="./img/client/2.png" alt="" class="clients-block__img">
                 <div class="clients-block__item">
                     <div class="clients-block__name">
@@ -527,7 +528,7 @@
                     </div>
                 </div>
             </div>
-            <div class="clients-block">
+            <div data-aos="fade-up" data-aos-duration="3000" class="clients-block">
                 <img src="./img/client/3.png" alt="" class="clients-block__img">
                 <div class="clients-block__item">
                     <div class="clients-block__name">
@@ -611,6 +612,10 @@
     <script src="./js/slick.min.js"></script>
     <script src="./js/jquery.validate.min.js"></script>
     <script src="./js/jquery.maskedinput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="./js/script.min.js"></script>
 </body>
 
