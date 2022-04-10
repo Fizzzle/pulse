@@ -1,0 +1,8 @@
+File from: [src/img/pulsometr.png]
+
+File to: [dist/img/*pulsometr.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: D:\webProject\pulsometr\node_modules\pngquant-bin\vendor\pngquant.exe --quality=75-100 -o dist/img/*pulsometr.png src/img/pulsometr.png
+  error: cannot open 'dist/img/*pulsometr.png.tmp' for writing

@@ -29,6 +29,9 @@ const imagecomp = require('compress-images');
  
 // Подключаем модуль del
 const del = require('del');
+
+// Минифицируем html
+const htmlmin = require('gulp-htmlmin')
  
 // Определяем логику работы Browsersync
 function browsersync() {
@@ -42,6 +45,9 @@ function browsersync() {
 function scripts() {
 	return src([ // Берем файлы из источников
 		// 'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+		// 'src/js/jquery.maskedinput.min.js',
+		// 'src/js/jquery.validate.min.js',
+		// 'src/js/slick.min.js',
 		'src/js/script.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
 		])
 	.pipe(concat('script.min.js')) // Конкатенируем в один файл
@@ -62,7 +68,7 @@ function styles() {
  
 async function images() {
 	imagecomp(
-		"src/img/*", // Берём все изображения из папки источника
+		"src/img/**/**", // Берём все изображения из папки источника
 		"dist/img/*", // Выгружаем оптимизированные изображения в папку назначения
 		{ compress_force: false, statistic: true, autoupdate: true }, false, // Настраиваем основные параметры
 		{ jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, // Сжимаем и оптимизируем изображеня
@@ -76,20 +82,28 @@ async function images() {
 		}
 	)
 }
- 
+
 function cleanimg() {
 	return del('app/images/dest/**/*', { force: true }) // Удаляем все содержимое папки "app/images/dest/"
 }
+
+// минифицируем html
+function minify() {
+  return src('src/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest('dist/'));
+};
+
+
  
-// function buildcopy() {
-// 	return src([ // Выбираем нужные файлы
-// 		'app/css/**/*.min.css',
-// 		'app/js/**/*.min.js',
-// 		'app/images/dest/**/*',
-// 		'app/**/*.html',
-// 		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
-// 	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
-// }
+function buildcopy() {
+	return src([ // Выбираем нужные файлы
+		'src/css/*.min.css',
+		'src/js/*.min.js',
+		'src/img/*',
+		], { base: 'src' }) // Параметр "base" сохраняет структуру проекта при копировании
+	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+}
  
 function cleandist() {
 	return del('dist/**/*', { force: true }) // Удаляем все содержимое папки "dist/"
@@ -102,15 +116,19 @@ function startwatch() {
 	
 	// Мониторим файлы препроцессора на изменения
 	watch('src/**/' + preprocessor + '/**/*', styles);
+
  
 	// Мониторим файлы HTML на изменения
 	watch('src/**/*.html').on('change', browserSync.reload);
  
 	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
-	watch('src/images/src/**/*', images);
+	watch('src/img/**/*', images);
  
 }
- 
+
+// минифицируем html для уменьшения веса
+exports.minify = minify
+
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
 exports.browsersync = browsersync;
  
@@ -127,7 +145,7 @@ exports.images = images;
 exports.cleanimg = cleanimg;
  
 // Создаем новый таск "build", который последовательно выполняет нужные операции
-// exports.build = series(cleandist, styles, images, buildcopy);
+exports.build = series(cleandist, styles, images, buildcopy, minify);
  
 // Экспортируем дефолтный таск с нужным набором функций
 exports.default = parallel(styles, browsersync, startwatch);
